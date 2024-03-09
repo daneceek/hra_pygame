@@ -1,0 +1,1 @@
+Snažíte se pochytat co nejvíce zlatých mincí a vyhýbat se duchům, kteří vám ubírají životy. Také můžete chytnout bonus, který vám dá nějaký pozitivní aspekt. Ovládání pomocí šipek doleva/doparava nebo pomocí kláves A/D.
