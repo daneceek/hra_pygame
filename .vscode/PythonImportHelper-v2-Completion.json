@@ -1,0 +1,254 @@
+[
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "class Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.centerx = SCREEN_WIDTH // 2\n        self.rect.bottom = SCREEN_HEIGHT - 10\n        self.speed = 8\n        self.lives = 3\n    def update(self):",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "Coin",
+        "kind": 6,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "class Coin(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/koin.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.x = random.randint(0, SCREEN_WIDTH - self.rect.width)\n        self.rect.y = random.randint(-100, -40)\n        self.speedy = random.randint(3, 7)\n    def update(self):\n        self.rect.y += self.speedy",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "Enemy",
+        "kind": 6,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "class Enemy(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/duch.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.x = random.randint(self.rect.width, SCREEN_WIDTH - self.rect.width)\n        self.rect.y = random.randint(-100, -40)\n        self.speedy = random.randint(3, 7)\n    def update(self):\n        self.rect.y += self.speedy",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "Bonus",
+        "kind": 6,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "class Bonus(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.type = random.choice(['life', 'speed', 'double points'])\n        self.image = pygame.image.load(\"IMG/luckyblock.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.x = random.randint(0, SCREEN_WIDTH - self.rect.width)\n        self.rect.y = random.randint(-1000, -600)\n        self.speedy = random.randint(3, 7)\n        self.double_points = False",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "reset_game",
+        "kind": 2,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "def reset_game():\n    global score\n    global now\n    now = 0\n    score = 0\n    enemies.empty()\n    player.rect.centerx = SCREEN_WIDTH // 2\n    player.rect.bottom = SCREEN_HEIGHT - 10\n    player.lives = 3\n    player.speed = 8",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nSILVER = (192, 192, 192)\nSCREEN_WIDTH = 800\nSCREEN_HEIGHT = 600\nclass Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nSILVER = (192, 192, 192)\nSCREEN_WIDTH = 800\nSCREEN_HEIGHT = 600\nclass Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()\n        self.rect = self.image.get_rect()",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "RED = (255, 0, 0)\nSILVER = (192, 192, 192)\nSCREEN_WIDTH = 800\nSCREEN_HEIGHT = 600\nclass Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.centerx = SCREEN_WIDTH // 2",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "SILVER",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "SILVER = (192, 192, 192)\nSCREEN_WIDTH = 800\nSCREEN_HEIGHT = 600\nclass Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.centerx = SCREEN_WIDTH // 2\n        self.rect.bottom = SCREEN_HEIGHT - 10",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "SCREEN_WIDTH",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "SCREEN_WIDTH = 800\nSCREEN_HEIGHT = 600\nclass Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.centerx = SCREEN_WIDTH // 2\n        self.rect.bottom = SCREEN_HEIGHT - 10\n        self.speed = 8",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "SCREEN_HEIGHT",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "SCREEN_HEIGHT = 600\nclass Player(pygame.sprite.Sprite):\n    def __init__(self):\n        super().__init__()\n        self.image = pygame.image.load(\"IMG/pngegg.png\").convert_alpha()\n        self.rect = self.image.get_rect()\n        self.rect.centerx = SCREEN_WIDTH // 2\n        self.rect.bottom = SCREEN_HEIGHT - 10\n        self.speed = 8\n        self.lives = 3",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))\npygame.display.set_caption(\"Catch the coins\")\nfont = pygame.font.Font(None, 36)\nbackground = pygame.image.load(\"IMG/bg-dementors.png\").convert()\nbackground_rect = background.get_rect()\nplayer = Player()\nall_sprites = pygame.sprite.Group()\nall_sprites.add(player)\nbonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "font",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "font = pygame.font.Font(None, 36)\nbackground = pygame.image.load(\"IMG/bg-dementors.png\").convert()\nbackground_rect = background.get_rect()\nplayer = Player()\nall_sprites = pygame.sprite.Group()\nall_sprites.add(player)\nbonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "background",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "background = pygame.image.load(\"IMG/bg-dementors.png\").convert()\nbackground_rect = background.get_rect()\nplayer = Player()\nall_sprites = pygame.sprite.Group()\nall_sprites.add(player)\nbonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()\n    all_sprites.add(coin)",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "background_rect",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "background_rect = background.get_rect()\nplayer = Player()\nall_sprites = pygame.sprite.Group()\nall_sprites.add(player)\nbonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()\n    all_sprites.add(coin)\n    coins.add(coin)",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "player",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "player = Player()\nall_sprites = pygame.sprite.Group()\nall_sprites.add(player)\nbonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()\n    all_sprites.add(coin)\n    coins.add(coin)\nenemies = pygame.sprite.Group()",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "all_sprites",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "all_sprites = pygame.sprite.Group()\nall_sprites.add(player)\nbonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()\n    all_sprites.add(coin)\n    coins.add(coin)\nenemies = pygame.sprite.Group()\nfor _ in range(6):",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "bonuses",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "bonuses = pygame.sprite.Group()\ncoins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()\n    all_sprites.add(coin)\n    coins.add(coin)\nenemies = pygame.sprite.Group()\nfor _ in range(6):\n    enemy = Enemy()\n    all_sprites.add(enemy)",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "coins",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "coins = pygame.sprite.Group()\nfor _ in range(3):\n    coin = Coin()\n    all_sprites.add(coin)\n    coins.add(coin)\nenemies = pygame.sprite.Group()\nfor _ in range(6):\n    enemy = Enemy()\n    all_sprites.add(enemy)\n    enemies.add(enemy)",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "enemies",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "enemies = pygame.sprite.Group()\nfor _ in range(6):\n    enemy = Enemy()\n    all_sprites.add(enemy)\n    enemies.add(enemy)\nrunning = True\nclock = pygame.time.Clock()\nscore = 0\nlast_bonus_time = pygame.time.get_ticks()\nbonus_frequency = 30000",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "running",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "running = True\nclock = pygame.time.Clock()\nscore = 0\nlast_bonus_time = pygame.time.get_ticks()\nbonus_frequency = 30000\ndef reset_game():\n    global score\n    global now\n    now = 0\n    score = 0",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "clock = pygame.time.Clock()\nscore = 0\nlast_bonus_time = pygame.time.get_ticks()\nbonus_frequency = 30000\ndef reset_game():\n    global score\n    global now\n    now = 0\n    score = 0\n    enemies.empty()",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "score",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "score = 0\nlast_bonus_time = pygame.time.get_ticks()\nbonus_frequency = 30000\ndef reset_game():\n    global score\n    global now\n    now = 0\n    score = 0\n    enemies.empty()\n    player.rect.centerx = SCREEN_WIDTH // 2",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "last_bonus_time",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "last_bonus_time = pygame.time.get_ticks()\nbonus_frequency = 30000\ndef reset_game():\n    global score\n    global now\n    now = 0\n    score = 0\n    enemies.empty()\n    player.rect.centerx = SCREEN_WIDTH // 2\n    player.rect.bottom = SCREEN_HEIGHT - 10",
+        "detail": "game",
+        "documentation": {}
+    },
+    {
+        "label": "bonus_frequency",
+        "kind": 5,
+        "importPath": "game",
+        "description": "game",
+        "peekOfCode": "bonus_frequency = 30000\ndef reset_game():\n    global score\n    global now\n    now = 0\n    score = 0\n    enemies.empty()\n    player.rect.centerx = SCREEN_WIDTH // 2\n    player.rect.bottom = SCREEN_HEIGHT - 10\n    player.lives = 3",
+        "detail": "game",
+        "documentation": {}
+    }
+]
